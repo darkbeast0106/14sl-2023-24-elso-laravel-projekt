@@ -21,3 +21,6 @@ Route::get('/hello', function () {
     echo "Hello World!";
 });
 
+Route::get('/todo', function() {
+    return view('todo');
+});

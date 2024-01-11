@@ -1,0 +1,30 @@
+Laravel
+https://laravel.com/
+
+Előfeltételek:
+- Telepített PHP (8.2 vagy újabb) 
+- Telepített composer: https://getcomposer.org/
+  - Csomagok telepítéséhez 7zip (https://www.7-zip.org/) vagy php.ini-ben engedélyezni a "zip" bővítményt
+- Php exe útvonalának felvétele a PATH környezeti változóba (composer telepítésekor elvégezhető)
+
+
+Új projekt létrehozása
+
+composer create-project laravel/laravel [projekt-neve]
+
+
+Meglévő projekt klónozása után:
+
+composer install
+cp .env.example .env
+php artisan key:generate --ansi
+
+
+
+Model osztály létrehozása
+
+php artisan make:model [Model-neve] --all
+
+
+Migráció futtatása (adattáblák létrehozása):
+php artisan migrate

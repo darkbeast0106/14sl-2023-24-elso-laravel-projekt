@@ -40,7 +40,7 @@ MVC Keretrendszer
   - Vezérli az alkalmazást
   - Felhasználói által megadott adatokat továbbítja a model számára
   - Kiválasztja, hogy melyik nézet jelenjen meg és betölti rá az adatokat
-
+https://media.geeksforgeeks.org/wp-content/uploads/20230927120218/mvc.png
 
 API controller létrehozása:
 php artisan make:controller API/[controller-neve] --api

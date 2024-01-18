@@ -28,3 +28,23 @@ php artisan make:model [Model-neve] --all
 
 Migráció futtatása (adattáblák létrehozása):
 php artisan migrate
+
+----------------------------------------------------
+MVC Keretrendszer
+- Model - Model
+  - Adattábla leírása, adatbázis műveletek végrehajtása
+- View - Nézet
+  - Felhasználói felület megjelenítése
+  - Felhasználói interakció
+- Controller - Vezérlő
+  - Vezérli az alkalmazást
+  - Felhasználói által megadott adatokat továbbítja a model számára
+  - Kiválasztja, hogy melyik nézet jelenjen meg és betölti rá az adatokat
+
+
+API controller létrehozása:
+php artisan make:controller API/[controller-neve] --api
+
+
+CRUD
+- Create, Read, Update, Delete

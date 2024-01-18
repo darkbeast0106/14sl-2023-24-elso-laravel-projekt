@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\TodoController;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,12 +24,12 @@ Route::get("/hello", function () {
     return ["message" => "Hello API!"];
 });
 
-
-Route::get("/todo", function() {
-    return Todo::all();
-});
-
-Route::post("/todo", function (Request $request) {
-    $todo = Todo::create(["title" => $request->title]);
-    return $todo;
-});
+/*
+Route::get("/todo", [TodoController::class, 'index']);
+Route::get("/todo/{id}", [TodoController::class, 'show']);
+Route::post("/todo", [TodoController::class, 'store']);
+Route::put("/todo/{id}", [TodoController::class, 'update']);
+Route::patch("/todo/{id}", [TodoController::class, 'update']);
+Route::delete("/todo/{id}", [TodoController::class, 'destroy']);
+*/
+Route::apiResource('/todo', TodoController::class);

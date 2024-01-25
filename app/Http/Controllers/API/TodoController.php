@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MarkMultipleTodoAsDoneRequest;
 use App\Http\Requests\StoreTodoRequest;
 use App\Http\Requests\UpdateTodoRequest;
 use App\Models\Todo;
@@ -74,5 +75,14 @@ class TodoController extends Controller
         $todo->done = true;
         $todo->save();
         return $todo;
+    }
+
+    public function markMultipleAsDone(MarkMultipleTodoAsDoneRequest $request) {
+        $todoIds = $request->todoIds;
+        $newTodos = [];
+        foreach ($todoIds as $id) {
+            $newTodos[] = $this->markAsDone($id);
+        }
+        return $newTodos;
     }
 }

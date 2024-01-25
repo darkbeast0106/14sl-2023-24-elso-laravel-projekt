@@ -34,3 +34,4 @@ Route::delete("/todo/{id}", [TodoController::class, 'destroy']);
 */
 Route::apiResource('/todo', TodoController::class);
 Route::post("/todo/{id}/markAsDone", [TodoController::class, "markAsDone"]);
+Route::post("/todo/markAsDone", [TodoController::class, "markMultipleAsDone"]);

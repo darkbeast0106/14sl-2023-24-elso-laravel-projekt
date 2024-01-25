@@ -65,4 +65,14 @@ class TodoController extends Controller
         $todo->delete();
         return response()->noContent();
     }
+
+    public function markAsDone(string $id) {
+        $todo = Todo::find($id);
+        if (is_null($todo)) {
+            return response()->json(["message" => "No item found with id: $id"], 404);
+        }
+        $todo->done = true;
+        $todo->save();
+        return $todo;
+    }
 }

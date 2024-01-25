@@ -27,6 +27,7 @@ php artisan make:model [Model-neve] --all
 
 
 Migráció futtatása (adattáblák létrehozása):
+
 php artisan migrate
 
 ----------------------------------------------------
@@ -48,3 +49,16 @@ php artisan make:controller API/[controller-neve] --api
 
 CRUD
 - Create, Read, Update, Delete
+
+
+Seeder futtatása (adattáblák feltöltése teszt adatokkal):
+
+php artisan db:seed
+
+Vagy migráció utáni futtatás:
+
+php artisan migrate --seed
+
+Összes tábla törlése és a migrációk futtatása (azokat a táblákat is törli amik nem migrációval lettek létrehozva):
+
+php artisan migrate:fresh

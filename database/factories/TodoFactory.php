@@ -17,7 +17,9 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            "title" => fake()->sentence(3)
+            "title" => fake()->sentence(3),
+            "priority" => fake()->randomElement(["low", "medium", "high"]),
+            "done" => fake()->numberBetween(0, 1)
         ];
     }
 }
